@@ -34,7 +34,7 @@ collections:
   posts:
     title: Blog # Needed for Siteleaf
     output: true
-    description: "Welcome to Yiwen's blog!" # The post list page content
+    description: "Yeah... It's Yiwen's blog :)" # The post list page content
 
 # 6. Jekyll collections settings
 defaults:
@@ -53,7 +53,7 @@ defaults:
 
 # 7. Site settings
 encoding: utf-8 # Make sure the encoding is right
-title: "Yiwen" # Site name or title
+title: "Yiwen Song" # Site name or title
 logo: "/assets/logo.svg" # Site logo
 # favicon: "/favicon.ico" # Uncomment to add custom favicon, or leave as is to use site logo
 description: "A really basic theme for Jekyll, using the official Jekyll theme implementation" # Site description and default description
