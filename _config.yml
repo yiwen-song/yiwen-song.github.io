@@ -40,7 +40,7 @@ collections:
   posts:
     title: Blog # Needed for Siteleaf
     output: true
-    description: "Yiwen's random thoughts :)" # The post list page content
+    description: "Some random thoughts and daydreams :)" # The post list page content
   poems:
     title: Poem # Needed for Siteleaf
     output: true

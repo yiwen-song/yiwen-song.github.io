@@ -2,7 +2,8 @@
 title: About Yiwen
 ---
 
-A mysterious person.
+A very mysterious person. <br/>
+Passionate about being lazy.
 
 
 
