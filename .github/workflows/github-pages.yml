@@ -1,4 +1,4 @@
-name: Build and deploy Jekyll site to GitHub Pages
+name: jekyll-cd
 
 on:
   push:
@@ -6,16 +6,12 @@ on:
       - master
 
 jobs:
-  github-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/cache@v2
+      - name: 🛎 Check out master
+        uses: actions/checkout@master
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: helaili/jekyll-action@2.0.5
-        env:
-        JEKYLL_PAT: $
+          fetch-depth: 1
+      - name: 🧪 Build and deploy
+        uses: victoriadrake/jekyll-cd@master
