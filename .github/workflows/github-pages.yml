@@ -13,5 +13,11 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
+      - name: Fix permission
+        run: |
+        chmod a+x bin/*
+        git commit -am "add permission"
       - name: 🧪 Build and deploy
         uses: victoriadrake/jekyll-cd@master
+    
+      
