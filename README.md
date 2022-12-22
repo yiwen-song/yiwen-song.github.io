@@ -1,6 +1,6 @@
 # README
 
-Please visit Yiwen's website at [`yiwen-song.github.io`](yiwen-song.github.io)
+Please visit Yiwen's website at [`yiwen-song.github.io`](https://yiwen-song.github.io/)
 
 This site was originally generated from [daviddarnes/garth](https://github.com/daviddarnes/garth) jekyll theme (Thanks for the great work!)
 
