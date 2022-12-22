@@ -44,7 +44,10 @@ collections:
   poems:
     title: Poem # Needed for Siteleaf
     output: true
-    description: "Poem translations :)" # The post list page content
+    description: 
+      "A collection of Chinese poem translations :)
+      <br/>
+      Thanks [Kevin Zhou](https://knzhou.github.io/) for helping polish them." # The post list page content
 
 # 6. Jekyll collections settings
 defaults:
