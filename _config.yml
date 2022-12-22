@@ -75,3 +75,4 @@ logo: "/assets/logo.svg" # Site logo
 description: "A really basic theme for Jekyll, using the official Jekyll theme implementation" # Site description and default description
 baseurl: ""
 lang: en-GB
+destination: docs/
