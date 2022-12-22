@@ -17,10 +17,16 @@ exclude:
 # 2. Installed Gems
 plugins:
 - jekyll-paginate
+- jekyll-paginate-multiple
 
 # 3. Gem settings
-paginate: 2 # jekyll-paginate > items per page
-paginate_path: page:num # jekyll-paginate > blog page
+paginate_multiple:
+  - paginate: 2
+    paginate_path: 'page:num'
+    sub_dir: '/blogs'
+  - paginate: 2
+    paginate_path: '/poem/page:num'
+    sub_dir: '/poems'
 
 # 4. Jekyll settings
 sass:
@@ -34,7 +40,11 @@ collections:
   posts:
     title: Blog # Needed for Siteleaf
     output: true
-    description: "Yeah... It's Yiwen's blog :)" # The post list page content
+    description: "Yiwen's random thoughts :)" # The post list page content
+  poems:
+    title: Poem # Needed for Siteleaf
+    output: true
+    description: "Poem translations :)" # The post list page content
 
 # 6. Jekyll collections settings
 defaults:
@@ -50,6 +60,12 @@ defaults:
       type: posts
     values:
       layout: post # Default layout
+  -
+    scope:
+      path: ""
+      type: poems
+    values:
+      layout: poem # Default layout
 
 # 7. Site settings
 encoding: utf-8 # Make sure the encoding is right
