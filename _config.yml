@@ -21,10 +21,10 @@ plugins:
 
 # 3. Gem settings
 paginate_multiple:
-  - paginate: 2
+  - paginate: 3
     paginate_path: 'page:num'
     sub_dir: '/blogs'
-  - paginate: 2
+  - paginate: 5
     paginate_path: '/poem/page:num'
     sub_dir: '/poems'
 
@@ -45,9 +45,8 @@ collections:
     title: Poem # Needed for Siteleaf
     output: true
     description: 
-      "A collection of Chinese poem translations :)
-      <br/>
-      Thanks [Kevin Zhou](https://knzhou.github.io/) for helping polish them." # The post list page content
+      "A collection of Chinese poem translations, 
+      with [Kevin Zhou](https://knzhou.github.io/) :)" # The post list page content
 
 # 6. Jekyll collections settings
 defaults:
