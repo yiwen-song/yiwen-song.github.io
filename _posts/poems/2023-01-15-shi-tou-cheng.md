@@ -1,6 +1,6 @@
 ---
 title: "金陵五题·石头城 (Five Poems of Jinling: Stone City)"
-category: 唐代·刘禹锡(Liu, Yu-Xi)
+category: 唐代·刘禹锡(Liu, Yuxi)
 ---
 
 > The old moon, to the east of the Huai river
