@@ -6,20 +6,13 @@ layout: default
 
 <main class="main  container">
 
-	<div class="content">
+	<article class="article  article--post  content  typeset">
 
-    <article class="article  article--page  typeset">
+    <h1>{{ page.title }}</h1>
+		{% include post-meta.html %}
+    {{ content }}
 
-			{% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
-			<h1>{{ collectiondata.title }}</h1>
-
-			{{ collectiondata.description | markdownify }}
-
-    </article>
-
-    {% include post-list.html %}
-
-  </div>
+  </article>
 
 </main>
 
