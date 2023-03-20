@@ -22,7 +22,7 @@ plugins:
 # 3. Gem settings
 paginate_multiple:
   - paginate: 3
-    paginate_path: 'page:num'
+    paginate_path: '/blog/page:num'
     sub_dir: '/blogs'
   - paginate: 5
     paginate_path: '/poem/page:num'
@@ -37,7 +37,7 @@ timezone: Europe/London # Timezone for blog posts and alike
 
 # 5. Collections
 collections:
-  posts:
+  blogs:
     title: Blog # Needed for Siteleaf
     output: true
     description: "Some random thoughts and daydreams :)" # The post list page content

@@ -8,20 +8,11 @@ layout: default
 
     <article class="article  article--page  content  typeset">
 
-        <h1>Search Site</h1>
-
-        Type in the title of the poem or blog you are looking for
-        <br></br>
+        {{ content }}
 
         <div id="search-demo-container">
             <input type="search" id="search-input" placeholder="Search...">
             <ul id="results-container"></ul>
-        </div>
-
-        <div class="page-content">
-            <div class="wrapper">
-                {{ content }}
-            </div>
         </div>
 
         <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
