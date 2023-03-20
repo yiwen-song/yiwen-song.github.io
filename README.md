@@ -3,7 +3,7 @@
 Please visit Yiwen's website at [`yiwen-song.github.io`](https://yiwen-song.github.io/)
 
 
-## References
+# References
 
 1. This site is originally generated from [daviddarnes/garth](https://github.com/daviddarnes/garth) jekyll theme.
 
