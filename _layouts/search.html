@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+    <article class="article  article--page  content  typeset">
+
+        <h1>Search Site</h1>
+
+        Type in the title of the poem or blog you are looking for
+        <br></br>
+
+        <div id="search-demo-container">
+            <input type="search" id="search-input" placeholder="Search...">
+            <ul id="results-container"></ul>
+        </div>
+
+        <div class="page-content">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </div>
+
+        <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+
+        <script>
+            window.simpleJekyllSearch = new SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('results-container'),
+                json: '{{ site.baseurl }}/search.json',
+                searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+                noResultsText: 'No results found',
+                limit: 10,
+                fuzzy: false,
+                exclude: ['Welcome']
+            })
+        </script>
+
+    </article>
+
+</main>
+
+{% include site-footer.html %}
