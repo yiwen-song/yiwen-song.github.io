@@ -22,7 +22,7 @@ plugins:
 # 3. Gem settings
 paginate_multiple:
   - paginate: 3
-    paginate_path: 'page:num'
+    paginate_path: '/post/page:num'
     sub_dir: '/blogs'
   - paginate: 5
     paginate_path: '/poem/page:num'
