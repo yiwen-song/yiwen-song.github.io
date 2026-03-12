@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFV4L2JCM5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DFV4L2JCM5');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yiwen Song | Research Scientist</title>
@@ -12,13 +21,23 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
+            background-color: #FFFAE8; /* Warm baby yellow background */
         }
-        h1, h2, h3 { color: #111; margin-top: 0; }
+        h1, h3 { color: #111; margin-top: 0; }
         h1 { margin-bottom: 0.2rem; }
+        
+        /* Spacing out the main sections */
+        h2 { 
+            color: #111; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1rem; 
+            border-bottom: 2px solid #eaecef; /* Optional: adds a subtle line under headers for better grouping */
+            padding-bottom: 0.5rem;
+        }
+
         a { color: #0366d6; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* Updated Header Styling */
         .header { 
             display: flex; 
             align-items: center; 
@@ -50,14 +69,16 @@
             font-size: 0.9em;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem; /* Adds even spacing between all links */
+            gap: 0.8rem;
         }
         .nav-links a { margin-left: 1rem; font-weight: 500; }
         
-        .news-item { margin-bottom: 0.5rem; }
+        /* Spacing out the individual items */
+        .news-item { margin-bottom: 1rem; } 
         .news-date { font-weight: bold; margin-right: 0.5rem; color: #555; }
-        .project { margin-bottom: 1.5rem; }
+        .project { margin-bottom: 2.5rem; } 
         .project-title { font-weight: bold; font-size: 1.1em; }
+        
         .tag { 
             background: #f1f8ff; 
             color: #0366d6; 
@@ -76,7 +97,7 @@
 
     <div class="header">
         <div class="profile-section">
-            <img src="profile_picture.jpg" alt="Yiwen Song" class="profile-pic">
+            <img src="profile_picture.png" alt="Yiwen Song" class="profile-pic">
             <div>
                 <h1>Yiwen Song</h1>
                 <p class="subtitle">Research Scientist @ Google</p>
@@ -165,14 +186,18 @@
         <div><span class="tag">Foundation Models</span></div>
     </div>
 
+    <p style="text-align: center; font-size: 0.9em; color: #666; margin-bottom: 2rem; margin-top: 4rem;">
+        You are the No.
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyiwensong.github.io&count_bg=%230366D6&title_bg=%230366D6&icon=&icon_color=%23E7E7E7&title=%20&edge_flat=false" alt="Visitor Count" style="vertical-align: middle; margin: 0 4px;"/>
+        visitor of this page.
+    </p>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var user = "yiwensong";
             var domain = "google.com";
             var emailLink = document.getElementById("email-link");
             emailLink.href = "mailto:" + user + "@" + domain;
-            // Optional: If you want the text to actually display the email instead of just "📧 Email"
-            // emailLink.innerHTML = "📧 " + user + "@" + domain;
         });
     </script>
 </body>
