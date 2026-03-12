@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yiwen Song | Research Scientist</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 { color: #111; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            border-bottom: 1px solid #eaecef; 
+            padding-bottom: 1rem; 
+            margin-bottom: 2rem; 
+        }
+        .nav-links a { margin-left: 1rem; }
+        .news-item { margin-bottom: 0.5rem; }
+        .news-date { font-weight: bold; margin-right: 0.5rem; color: #555; }
+        .project { margin-bottom: 1.5rem; }
+        .project-title { font-weight: bold; font-size: 1.1em; }
+        .tag { 
+            background: #f1f8ff; 
+            color: #0366d6; 
+            padding: 0.2em 0.5em; 
+            border-radius: 3px; 
+            font-size: 0.85em; 
+            margin-right: 0.5em;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .authors { font-size: 0.95em; color: #444; margin-bottom: 0.3em; }
+        .venue { font-style: italic; font-size: 0.9em; color: #666; margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>Yiwen Song</h1>
+            <p>Research Scientist @ Google</p>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+        </div>
+    </div>
+
+    <h2 id="about">About Me</h2>
+    <p>I am a Research Scientist at Google. My research focuses on Large Language Models (LLMs), particularly at the intersection of multimodality, generative AI, and agentic systems. I am passionate about advancing how models reason, plan, and interact with complex, real-world environments.</p>
+    <p>Recently, my work has centered on enabling computer use agents (CUAs) to learn from human demonstration videos, developing scalable multi-agent frameworks (like blackboard systems), and exploring novel ways to improve LLM problem-solving through test-time scaling and step-by-step planning.</p>
+
+    <h2>News</h2>
+    <div class="news-item">
+        <span class="news-date">[2026]</span> Released new work on "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review."
+    </div>
+    <div class="news-item">
+        <span class="news-date">[2025]</span> Co-authored "Gemini 2.5", pushing the frontier of advanced reasoning, multimodality, and agentic capabilities.
+    </div>
+    <div class="news-item">
+        <span class="news-date">[2025]</span> Released "Watch and Learn" (W&L), a framework for training Computer Use Agents from online video tutorials.
+    </div>
+    <div class="news-item">
+        <span class="news-date">[2025]</span> Published research on emotionally-driven test-time scaling (HEART) and step-by-step planning (PLAN-TUNING).
+    </div>
+
+    <h2 id="research">Research Interests</h2>
+    <ul>
+        <li><strong>Computer Use & Agentic Systems:</strong> Building frameworks to scale training data for UI-interacting agents and advancing multi-agent architectures (e.g., Blackboard systems).</li>
+        <li><strong>LLM Reasoning & Test-Time Scaling:</strong> Improving complex problem-solving via iterative decoding, affective feedback, and post-training planning trajectories.</li>
+        <li><strong>Multimodal & Foundational Models:</strong> Scaling generative models across vision and language, evaluating alignment through calibrated autoraters, and pushing the capabilities of frontier models.</li>
+    </ul>
+
+    <h2 id="publications">Selected Publications</h2>
+    
+    <div class="project">
+        <div class="project-title"><a href="https://arxiv.org/abs/2510.04673">Watch and Learn: Learning to Use Computers from Online Videos</a></div>
+        <div class="authors">Chan Hee Song, <strong>Yiwen Song</strong>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
+        <div class="venue">arXiv (2025)</div>
+        <div><span class="tag">Computer Use Agents</span> <span class="tag">Inverse Dynamics</span></div>
+        <p>Introduced a framework that transforms web-scale human demonstration videos into executable UI trajectories, providing scalable training data and in-context exemplars for Computer Use Agents.</p>
+    </div>
+
+    <div class="project">
+        <div class="project-title">Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities</div>
+        <div class="authors">Gemini Team (G Comanici, E Bieber... <strong>Yiwen Song</strong>, et al.)</div>
+        <div class="venue">arXiv (2025)</div>
+        <div><span class="tag">Frontier Models</span> <span class="tag">Multimodality</span></div>
+        <p>Core contributor to the Gemini 2.5 technical report, detailing advancements in multimodal reasoning and agentic workflows.</p>
+    </div>
+
+    <div class="project">
+        <div class="project-title">HEART: Emotionally-driven test-time scaling of Language Models</div>
+        <div class="authors">G Pinto, P Goyal, M Parmar, <strong>Yiwen Song</strong>, S Chakraborty, Z Wang, J Yoon...</div>
+        <div class="venue">arXiv (2025)</div>
+        <div><span class="tag">LLM Reasoning</span> <span class="tag">Test-Time Scaling</span></div>
+        <p>Proposed a novel framework leveraging emotionally-charged prompts for iterative self-correction, significantly improving LLM performance on complex reasoning benchmarks.</p>
+    </div>
+
+    <div class="project">
+        <div class="project-title">Blackboard Multi-Agent Systems for Information Discovery in Data Science</div>
+        <div class="authors">A Salemi, M Parmar, P Goyal, <strong>Yiwen Song</strong>, J Yoon, H Zamani, T Pfister...</div>
+        <div class="venue">arXiv (2025)</div>
+        <div><span class="tag">Multi-Agent Systems</span> <span class="tag">Data Discovery</span></div>
+        <p>Designed a decentralized multi-agent communication paradigm inspired by blackboard architectures to improve the scalability and success rate of LLM-driven data discovery tasks.</p>
+    </div>
+
+    <div class="project">
+        <div class="project-title">Judging with Confidence: Calibrating Autoraters to Preference Distributions</div>
+        <div class="authors">Z Li, X Li, C Huang, G Li... <strong>Yiwen Song</strong>... D Schuurmans, P Goyal, et al.</div>
+        <div class="venue">arXiv (2025)</div>
+        <div><span class="tag">Alignment</span> <span class="tag">Evaluation</span></div>
+        <p>Developed a general framework to calibrate probabilistic LLM-based judges (autoraters) to match target population preference distributions, reducing positional bias and improving reliability.</p>
+    </div>
+
+    <div class="project">
+        <div class="project-title"><a href="https://arxiv.org/abs/2407.21783">The Llama 3 Herd of Models</a></div>
+        <div class="authors">Llama Team (A Dubey, A Jauhri... <strong>Yiwen Song</strong>, et al.)</div>
+        <div class="venue">arXiv (2024)</div>
+        <div><span class="tag">Foundation Models</span></div>
+        <p>Co-authored the technical report for the Llama 3 family of foundational open-weights models.</p>
+    </div>
+
+    <hr>
+    <p style="text-align: center; font-size: 0.9em; color: #666;">
+        <a href="https://research.google/people/yiwensong/">Google Research</a> • 
+        <a href="https://github.com/yiwen-song">GitHub</a> • 
+        <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en">Google Scholar</a>
+    </p>
+
+</body>
+</html>
