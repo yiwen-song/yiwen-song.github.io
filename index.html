@@ -109,6 +109,36 @@
         .authors { font-size: 0.95em; color: #444; margin-bottom: 0.3em; }
         .venue { font-style: italic; font-size: 0.9em; color: #666; margin-bottom: 0.5em; }
 
+        /* Styling for the resource links */
+        .project-links {
+            font-size: 0.9em;
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            color: #0366d6;
+            font-weight: 500;
+        }
+
+        .project-links a::before {
+            content: "[";
+            color: #666;
+            margin-right: 2px;
+        }
+
+        .project-links a::after {
+            content: "]";
+            color: #666;
+            margin-left: 2px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
         /* Footer and Map Sizing */
         .footer {
             margin-top: 4rem;
@@ -156,7 +186,10 @@
     
     <h2 id="news">News</h2>
     <div class="news-item">
-        <span class="news-date">[2026-03]</span> Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement."
+        <span class="news-date">[2026-04]</span> Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing"
+    </div>
+    <div class="news-item">
+        <span class="news-date">[2026-03]</span> Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement"
     </div>
     <div class="news-item">
         <span class="news-date">[2026-03]</span> Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.
@@ -177,16 +210,36 @@
     <h2 id="publications">Selected Publications</h2>
     
     <div class="project">
+        <div class="project-title"><a href="https://arxiv.org/abs/2604.05018">PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</a></div>
+        <div class="authors"><strong>Yiwen Song</strong>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
+        <div class="venue">arXiv (2026)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2604.05018">Paper</a>
+            <a href="https://yiwen-song.github.io/paper_orchestra/">Project Page</a>
+        </div>
+        <div><span class="tag">AI Paper Writing</span> <span class="tag">Multi-agent System</span></div>
+    </div>
+
+    <div class="project">
         <div class="project-title"><a href="https://arxiv.org/abs/2603.12310">VQQA: An Agentic Approach for Video Evaluation and Quality Improvement</a></div>
         <div class="authors"><strong>Yiwen Song</strong>, Tomas Pfister, Yale Song</div>
         <div class="venue">arXiv (2026)</div>
-        <div><span class="tag">Video Evaluation</span> <span class="tag">Quality Improvement</span> <span class="tag">Prompt Optimization</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2603.12310">Paper</a>
+            <a href="https://yiwen-song.github.io/vqqa/">Project Page</a>
+        </div>
+        <div><span class="tag">Video Evaluation</span> <span class="tag">Quality Improvement</span> <span class="tag">Prompt Optimization</span></div>
     </div>
 
     <div class="project">
         <div class="project-title"><a href="https://arxiv.org/abs/2510.04673">Watch and Learn: Learning to Use Computers from Online Videos</a></div>
         <div class="authors">Chan Hee Song, <strong>Yiwen Song</strong>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
         <div class="venue">CVPR (2026)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2510.04673">Paper</a>
+            <a href="https://chanh.ee/wandl/">Project Page</a>
+            <a href="https://venturebeat.com/ai/googles-watch-and-learn-framework-cracks-the-data-bottleneck-for-training">Media Coverage</a>
+        </div>
         <div><span class="tag">Computer Use Agents</span> <span class="tag">Inverse Dynamics Model</span></div>
     </div>
 
@@ -194,6 +247,9 @@
         <div class="project-title"><a href="https://arxiv.org/abs/2511.05460">Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models</a></div>
         <div class="authors">Sarkar Snigdha Sarathi Das, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Long T Le, Lesly Miculicich, Jinsung Yoon, Rui Zhang, Hamid Palangi, Tomas Pfister</div>
         <div class="venue">TMLR (2026)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2511.05460">Paper</a>
+        </div>
         <div><span class="tag">Time Series Forecasting</span> <span class="tag">Foundation Models</span></div>
     </div>
 
@@ -201,6 +257,10 @@
         <div class="project-title"><a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities</a></div>
         <div class="authors">Gemini Team (G Comanici, E Bieber... <strong>Yiwen Song</strong>, et al.)</div>
         <div class="venue">arXiv (2025)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2507.06261">Paper</a>
+            <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/">Blog</a>
+        </div>
         <div><span class="tag">Frontier Models</span> <span class="tag">Multimodality</span></div>
     </div>
 
@@ -208,13 +268,20 @@
         <div class="project-title"><a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">Plan-tuning: Post-training language models to learn step-by-step planning for complex problem solving</a></div>
         <div class="authors">Mihir Parmar, Palash Goyal, Xin Liu, <strong>Yiwen Song</strong>, Mingyang Ling, Chitta Baral, Hamid Palangi, Tomas Pfister</div>
         <div class="venue">EMNLP Main (2025)</div>
-        <div><span class="tag">NLP</span> <span class="tag">LLMs</span></div>
+        <div class="project-links">
+            <a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">Paper</a>
+            <a href="https://github.com/Mihir3009/plan-tuning">Code</a>
+        </div>
+        <div><span class="tag">LLM Planning</span> <span class="tag">Post-training</span></div>
     </div>
 
     <div class="project">
         <div class="project-title"><a href="https://arxiv.org/abs/2509.22876">HEART: Emotionally-driven test-time scaling of Language Models</a></div>
         <div class="authors">Gabriela Pinto, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Souradip Chakraborty, Zifeng Wang, Jingsun Yoon, Hamid Palangi, Tomas Pfister</div>
         <div class="venue">arXiv (2025)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2509.22876">Paper</a>
+        </div>
         <div><span class="tag">LLM Reasoning</span> <span class="tag">Test-Time Scaling</span></div>
     </div>
 
@@ -222,6 +289,9 @@
         <div class="project-title"><a href="https://arxiv.org/abs/2510.01285">Llm-based multi-agent blackboard system for information discovery in data science</a></div>
         <div class="authors">Alireza Salemi, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Jinsung Yoon, Hamed Zamani, Tomas Pfister, Hamid Palangi</div>
         <div class="venue">arXiv (2025)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2510.01285">Paper</a>
+        </div>
         <div><span class="tag">Multi-Agent Systems</span> <span class="tag">Data Discovery</span></div>
     </div>
 
@@ -229,6 +299,10 @@
         <div class="project-title"><a href="https://arxiv.org/abs/2407.21783">The Llama 3 Herd of Models</a></div>
         <div class="authors">Llama Team (A Dubey, A Jauhri... <strong>Yiwen Song</strong>, et al.)</div>
         <div class="venue">arXiv (2024)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2407.21783">Paper</a>
+            <a href="https://www.llama.com/models/llama-3/">Webpage</a>
+        </div>
         <div><span class="tag">Foundation Models</span></div>
     </div>
 
