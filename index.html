@@ -90,8 +90,35 @@
             color: #0366d6;
         }
         
+        /* Scrollable News Section */
+        .news-container {
+            max-height: 250px;
+            overflow-y: auto;
+            border: 1px solid #eaecef;
+            padding: 1rem;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.4); /* Slight contrast */
+            margin-bottom: 2rem;
+        }
+        
+        /* Custom scrollbar for webkit browsers */
+        .news-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .news-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .news-container::-webkit-scrollbar-thumb {
+            background: #d1d5da;
+            border-radius: 4px;
+        }
+        .news-container::-webkit-scrollbar-thumb:hover {
+            background: #959da5;
+        }
+
         /* Spacing out the individual items */
         .news-item { margin-bottom: 1rem; } 
+        .news-item:last-child { margin-bottom: 0; }
         .news-date { font-weight: bold; margin-right: 0.5rem; color: #555; }
         .project { margin-bottom: 2.5rem; } 
         .project-title { font-weight: bold; font-size: 1.1em; }
@@ -152,7 +179,7 @@
         
         .map-container {
             width: 100%;
-            max-width: 250px; /* Roughly 3x smaller than the main layout width */
+            max-width: 250px; 
         }
     </style>
 </head>
@@ -185,37 +212,72 @@
     <p>Prior to joining Google, I spent four years at Meta conducting research and building training frameworks in computer vision domain. I was a core contributor to <a href="https://www.llama.com/models/llama-3/">Llama 3</a> and served as a maintainer for the <a href="https://github.com/pytorch/vision">TorchVision</a> library.</p>
     
     <h2 id="news">News</h2>
-    <div class="news-item">
-        <span class="news-date">[2026-04]</span> Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2026-04]</span> Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2026-03]</span> Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2026-03]</span> Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2026-02]</span> Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2026-01]</span> Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review."
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2025-07]</span> Released the technical report for <strong>Gemini 2.5</strong>.
-    </div>
-    <div class="news-item">
-        <span class="news-date">[2025-04]</span> Released the technical report for <strong>ShieldGemma2</strong>.
+    <div class="news-container">
+        <div class="news-item">
+            <span class="news-date">[2026-07]</span> Excited to give a demo for Co-Director at the <a href="https://research.google/conferences-and-events/google-at-icml-2026/">Google booth & kiosk at ICML 2026</a>.
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-07]</span> Two papers accepted to <strong>COLM 2026</strong>: "Co-Director: Agentic Generative Video Storytelling" and "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-05]</span> Two papers accepted to <strong>ICML 2026</strong>: "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems" and "The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust".
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-04]</span> Gave a talk about PaperOrchestra at the <a href="https://hub.baai.ac.cn/paper/ac0bb9ed-9fad-412c-ba1c-fedbb3129dbe">BAAI online seminar</a>.
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-04]</span> Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-04]</span> Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-03]</span> Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-03]</span> Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-02]</span> Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2026-01]</span> Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review."
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025-07]</span> Released the technical report for <strong>Gemini 2.5</strong>.
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025-04]</span> Released the technical report for <strong>ShieldGemma2</strong>.
+        </div>
     </div>
     
     <h2 id="publications">Selected Publications</h2>
 
     <div class="project">
+        <div class="project-title"><a href="https://arxiv.org/abs/2606.07822">The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust</a></div>
+        <div class="authors">Nishant Subramani, Palash Goyal, <strong>Yiwen Song</strong>, Mani Malek, Yuan Xue, Tomas Pfister, Hamid Palangi</div>
+        <div class="venue">ICML (2026)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2606.07822">Paper</a>
+        </div>
+        <div><span class="tag">Language Models</span> <span class="tag">Calibration</span> <span class="tag">Trust</span></div>
+    </div>
+
+    <div class="project">
+        <div class="project-title"><a href="https://arxiv.org/abs/2604.05364">TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems</a></div>
+        <div class="authors">Md Atik Ahamed, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Long T. Le, Qiang Cheng, Chun-Liang Li, Hamid Palangi, Jinsung Yoon, Tomas Pfister</div>
+        <div class="venue">ICML (2026)</div>
+        <div class="project-links">
+            <a href="https://arxiv.org/abs/2604.05364">Paper</a>
+            <a href="https://tfrbench.github.io/">Project Page</a>
+        </div>
+        <div><span class="tag">Time Series Forecasting</span> <span class="tag">Benchmarking</span> <span class="tag">LLM Reasoning</span></div>
+    </div>
+
+    <div class="project">
         <div class="project-title"><a href="https://arxiv.org/abs/2604.24842">Co-Director: Agentic Generative Video Storytelling</a></div>
         <div class="authors">Yale Song, <strong>Yiwen Song</strong>, Nick Losier, Nathan Hodson, Ye Jin, Rhyard Zhu, Yan Xu, Daniel Vlasic, Carina Claassen, Jasmine Leon, Khanh G. LeViet, Zack Chomyn, Joe Timmons, Brett Slatkin, Scott Penberthy, Tomas Pfister</div>
-        <div class="venue">arXiv (2026)</div>
+        <div class="venue">COLM (2026)</div>
         <div class="project-links">
             <a href="https://arxiv.org/abs/2604.24842">Paper</a>
             <a href="https://co-director-agent.github.io/">Project Page</a>
@@ -237,7 +299,7 @@
     <div class="project">
         <div class="project-title"><a href="https://arxiv.org/abs/2604.05018">PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</a></div>
         <div class="authors"><strong>Yiwen Song</strong>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
-        <div class="venue">arXiv (2026)</div>
+        <div class="venue">COLM (2026)</div>
         <div class="project-links">
             <a href="https://arxiv.org/abs/2604.05018">Paper</a>
             <a href="https://yiwen-song.github.io/paper_orchestra/">Project Page</a>
