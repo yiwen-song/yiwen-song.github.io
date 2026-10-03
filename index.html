@@ -1,404 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFV4L2JCM5"></script>
-    <script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFV4L2JCM5"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DFV4L2JCM5');
-    </script>
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yiwen Song | Research Scientist</title>
-    <style>
-        /* Smooth scrolling for navigation links */
-        html {
-            scroll-behavior: smooth; 
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yiwen Song | Research Scientist</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #FFFAE8; /* Warm baby yellow background */
-        }
-        h1, h3 { color: #111; margin-top: 0; }
-        h1 { margin-bottom: 0.2rem; }
-        
-        /* Spacing out the main sections */
-        h2 { 
-            color: #111; 
-            margin-top: 3.5rem; 
-            margin-bottom: 1rem; 
-            border-bottom: 2px solid #eaecef; 
-            padding-bottom: 0.5rem;
-        }
+    html { scroll-behavior: smooth; }
 
-        a { color: #0366d6; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
-        /* Header & Nav CSS */
-        .header { 
-            border-bottom: 1px solid #eaecef; 
-            padding-bottom: 1.5rem; 
-            margin-bottom: 2rem; 
-        }
-        .profile-section {
-            display: flex;
-            align-items: center; 
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #eaecef;
-        }
-        .subtitle {
-            margin: 0 0 0.5rem 0;
-            color: #555;
-            font-size: 1.1em;
-        }
-        .contact-info {
-            font-size: 0.9em;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* Nav links aligned with contact info */
-        .nav-links {
-            margin-top: 1rem; 
-            display: flex;
-            gap: 1.5rem; 
-            flex-wrap: wrap;
-        }
-        .nav-links a { 
-            font-weight: 600; 
-            color: #111; 
-        }
-        .nav-links a:hover {
-            color: #0366d6;
-        }
-        
-        /* Scrollable News Section */
-        .news-container {
-            max-height: 250px;
-            overflow-y: auto;
-            border: 1px solid #eaecef;
-            padding: 1rem;
-            border-radius: 6px;
-            background-color: rgba(255, 255, 255, 0.4); /* Slight contrast */
-            margin-bottom: 2rem;
-        }
-        
-        /* Custom scrollbar for webkit browsers */
-        .news-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        .news-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .news-container::-webkit-scrollbar-thumb {
-            background: #d1d5da;
-            border-radius: 4px;
-        }
-        .news-container::-webkit-scrollbar-thumb:hover {
-            background: #959da5;
-        }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        /* Spacing out the individual items */
-        .news-item { margin-bottom: 1rem; } 
-        .news-item:last-child { margin-bottom: 0; }
-        .news-date { font-weight: bold; margin-right: 0.5rem; color: #555; }
-        .project { margin-bottom: 2.5rem; } 
-        .project-title { font-weight: bold; font-size: 1.1em; }
-        
-        .tag { 
-            background: #f1f8ff; 
-            color: #0366d6; 
-            padding: 0.2em 0.5em; 
-            border-radius: 3px; 
-            font-size: 0.85em; 
-            margin-right: 0.5em;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-        .authors { font-size: 0.95em; color: #444; margin-bottom: 0.3em; }
-        .venue { font-style: italic; font-size: 0.9em; color: #666; margin-bottom: 0.5em; }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        /* Styling for the resource links */
-        .project-links {
-            font-size: 0.9em;
-            margin-bottom: 0.6rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+    /* Header */
+    .site-header {
+      text-align: center;
+      padding: 60px 0 20px;
+    }
 
-        .project-links a {
-            color: #0366d6;
-            font-weight: 500;
-        }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
 
-        .project-links a::before {
-            content: "[";
-            color: #666;
-            margin-right: 2px;
-        }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
 
-        .project-links a::after {
-            content: "]";
-            color: #666;
-            margin-left: 2px;
-        }
+    .site-header .tagline {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
 
-        .project-links a:hover {
-            text-decoration: underline;
-        }
+    /* Social links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
 
-        /* Footer and Map Sizing */
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eaecef;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        
-        .map-container {
-            width: 100%;
-            max-width: 250px; 
-        }
-    </style>
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      color: #555;
+      font-size: 0.9rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #222;
+      border-color: #aaa;
+      text-decoration: none;
+    }
+
+    .social-links svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Section nav */
+    .site-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a {
+      color: #222;
+      font-weight: 600;
+    }
+
+    .site-nav a:hover { color: #0066cc; }
+
+    /* Bio */
+    .bio {
+      margin: 20px 0 10px;
+      text-align: left;
+    }
+
+    .bio p {
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    /* Section styles */
+    .section {
+      margin: 40px 0;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+      letter-spacing: -0.3px;
+    }
+
+    /* News */
+    .news-container {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 16px 20px;
+      background: #fafafa;
+    }
+
+    .news-container::-webkit-scrollbar { width: 6px; }
+    .news-container::-webkit-scrollbar-track { background: transparent; }
+    .news-container::-webkit-scrollbar-thumb { background: #d1d5da; border-radius: 4px; }
+    .news-container::-webkit-scrollbar-thumb:hover { background: #959da5; }
+
+    .news-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .news-item:last-child { margin-bottom: 0; }
+
+    .news-date {
+      flex-shrink: 0;
+      width: 72px;
+      color: #888;
+      font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+
+    /* Publications */
+    .pub-category {
+      margin-bottom: 28px;
+    }
+
+    .pub-category h3 {
+      font-size: 1.26rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .pub-all {
+      color: #555;
+      margin: -12px 0 20px;
+    }
+
+    .pub-item {
+      margin-bottom: 14px;
+      padding-left: 16px;
+      border-left: 3px solid #e8e8e8;
+    }
+
+    .pub-item .pub-title {
+      font-weight: 500;
+    }
+
+    .pub-item .pub-title a {
+      color: #0066cc;
+    }
+
+    .pub-item .pub-authors {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .pub-item .pub-venue {
+      font-size: 0.85rem;
+      color: #c0392b;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .pub-item .pub-venue .pub-preprint {
+      color: #888;
+      font-weight: 500;
+    }
+
+    .pub-role {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: #fdecea;
+      color: #c0392b;
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.5;
+      vertical-align: middle;
+    }
+
+    .pub-item .pub-code {
+      display: block;
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .pub-item .pub-code a {
+      color: #1a7a3a;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .map-container {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .site-header { padding: 40px 0 16px; }
+      .avatar { width: 120px; height: 120px; }
+      .site-header h1 { font-size: 1.6rem; }
+      .section h2 { font-size: 1.2rem; }
+      .news-item { flex-direction: column; gap: 2px; }
+      .news-date { width: auto; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="profile-section">
-            <img src="profile_picture.png" alt="Yiwen Song" class="profile-pic">
-            <div class="profile-text">
-                <h1>Yiwen Song (宋怡文)</h1>
-                <p class="subtitle">Research Scientist @ Google</p>
-                <div class="contact-info">
-                    <a href="mailto:yiwensong@google.com">📧 Email</a>
-                    <a href="https://www.linkedin.com/in/yiwen-song-59682916b/">💼 LinkedIn</a>
-                    <a href="https://research.google/people/yiwensong/">🔬 Google Research</a>
-                    <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en">🎓 Google Scholar</a>
-                    <a href="https://github.com/yiwen-song">💻 GitHub</a>
-                </div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#news">News</a>
-                    <a href="#publications">Selected Publications</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+    <!-- Header -->
+    <header class="site-header">
+      <img class="avatar" src="profile_picture.png" width="150" height="150" alt="Yiwen Song">
+      <h1>Yiwen Song (宋怡文)</h1>
+      <p class="tagline">Research Scientist @ <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI Research</a></p>
 
-    <h2 id="about">About Me</h2>
-    <p>I am currently a Senior Research Scientist at <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI Research</a>. My research focuses on Large Language Models, particularly at the intersection of multimodality, generative AI, and agentic systems. I am passionate about advancing how models reason, plan, and interact with complex, real-world environments.</p>
-    <p>Prior to joining Google, I spent four years at Meta conducting research and building training frameworks in computer vision domain. I was a core contributor to <a href="https://www.llama.com/models/llama-3/">Llama 3</a> and served as a maintainer for the <a href="https://github.com/pytorch/vision">TorchVision</a> library.</p>
-    
-    <h2 id="news">News</h2>
-    <div class="news-container">
+      <div class="social-links">
+        <a href="mailto:yiwensong@google.com" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/yiwen-song-59682916b/" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          <span>Google Scholar</span>
+        </a>
+        <a href="https://research.google/people/yiwensong/" title="Google Research">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 11.33L18 18H6l5-6.67V6h2m2.96-2H8.04c-.42 0-.65.48-.39.81L9 6.5v4.17L3.2 18.4c-.49.66-.02 1.6.8 1.6h16c.82 0 1.29-.94.8-1.6L15 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81z"/></svg>
+          <span>Google Research</span>
+        </a>
+      </div>
+
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#tech-reports">Technical Reports</a>
+      </nav>
+    </header>
+
+    <!-- Bio -->
+    <section class="bio" id="about">
+      <p>
+        I am a Research Scientist at <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI Research</a>.
+        My research focuses on Large Language Models, particularly at the intersection of multimodality, generative AI, and agentic systems.
+        I am passionate about advancing how models reason, plan, and interact with complex, real-world environments.
+      </p>
+      <p>
+        Prior to joining Google, I spent four years at Meta conducting research and building training frameworks in the computer vision domain.
+        I was a core contributor to <a href="https://www.llama.com/models/llama-3/">Llama 3</a> and served as a maintainer for the <a href="https://github.com/pytorch/vision">TorchVision</a> library.
+      </p>
+    </section>
+
+    <!-- News -->
+    <section class="section" id="news">
+      <h2>News</h2>
+      <div class="news-container">
         <div class="news-item">
-            <span class="news-date">[2026-07]</span> Excited to give a demo for Co-Director at the <a href="https://research.google/conferences-and-events/google-at-icml-2026/">Google booth & kiosk at ICML 2026</a>.
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-07]</span> Two papers accepted to <strong>COLM 2026</strong>: "Co-Director: Agentic Generative Video Storytelling" and "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-05]</span> Two papers accepted to <strong>ICML 2026</strong>: "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems" and "The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust".
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-04]</span> Gave a talk about PaperOrchestra at the <a href="https://hub.baai.ac.cn/paper/ac0bb9ed-9fad-412c-ba1c-fedbb3129dbe">BAAI online seminar</a>.
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-04]</span> Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-04]</span> Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-03]</span> Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-03]</span> Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-02]</span> Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.
-        </div>
-        <div class="news-item">
-            <span class="news-date">[2026-01]</span> Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review."
+          <div class="news-date">2026-10</div>
+          <div>Attending <strong>COLM 2026</strong> in San Francisco (Oct 6&ndash;9). Join our demo &amp; Q&amp;A on <em>Co-Director: Agentic Generative Video Storytelling</em> at the <a href="https://research.google/conferences-and-events/google-at-colm-2026/">Google booth</a> (#107) on Tuesday, Oct 6, 1:00&ndash;1:30 PM PT.</div>
         </div>
         <div class="news-item">
-            <span class="news-date">[2025-07]</span> Released the technical report for <strong>Gemini 2.5</strong>.
+          <div class="news-date">2026-09</div>
+          <div>Two papers accepted to <strong>NeurIPS 2026</strong>: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review" and "LLM-Based Multi-Agent Blackboard System for Information Discovery in Data Science".</div>
         </div>
         <div class="news-item">
-            <span class="news-date">[2025-04]</span> Released the technical report for <strong>ShieldGemma2</strong>.
+          <div class="news-date">2026-09</div>
+          <div>Two papers accepted to <strong>EMNLP 2026</strong> (Findings): "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Judging with Confidence: Calibrating Autoraters to Preference Distributions".</div>
         </div>
-    </div>
-    
-    <h2 id="publications">Selected Publications</h2>
+        <div class="news-item">
+          <div class="news-date">2026-09</div>
+          <div>Google Research blog post on Co-Director: <a href="https://research.google/blog/coherent-long-form-video-generation/">Automating coherent long-form video generation</a>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-07</div>
+          <div>Gave a demo for Co-Director at the <a href="https://research.google/conferences-and-events/google-at-icml-2026/">Google booth &amp; kiosk at ICML 2026</a>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-07</div>
+          <div>Two papers accepted to <strong>COLM 2026</strong>: "Co-Director: Agentic Generative Video Storytelling" and "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-05</div>
+          <div>Two papers accepted to <strong>ICML 2026</strong>: "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems" and "The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-04</div>
+          <div>Gave a talk about PaperOrchestra at the <a href="https://hub.baai.ac.cn/paper/ac0bb9ed-9fad-412c-ba1c-fedbb3129dbe">BAAI online seminar</a>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-04</div>
+          <div>Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-04</div>
+          <div>Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-03</div>
+          <div>Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-03</div>
+          <div>Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-02</div>
+          <div>Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2026-01</div>
+          <div>Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review".</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025-07</div>
+          <div>Released the technical report for <strong>Gemini 2.5</strong>.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025-04</div>
+          <div>Released the technical report for <strong>ShieldGemma 2</strong>.</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2606.07822">The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust</a></div>
-        <div class="authors">Nishant Subramani, Palash Goyal, <strong>Yiwen Song</strong>, Mani Malek, Yuan Xue, Tomas Pfister, Hamid Palangi</div>
-        <div class="venue">ICML (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2606.07822">Paper</a>
-        </div>
-        <div><span class="tag">Language Models</span> <span class="tag">Calibration</span> <span class="tag">Trust</span></div>
-    </div>
+    <!-- Publications -->
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <p class="pub-all">See all publications on <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en">Google Scholar</a>.</p>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2604.05364">TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems</a></div>
-        <div class="authors">Md Atik Ahamed, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Long T. Le, Qiang Cheng, Chun-Liang Li, Hamid Palangi, Jinsung Yoon, Tomas Pfister</div>
-        <div class="venue">ICML (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2604.05364">Paper</a>
-            <a href="https://tfrbench.github.io/">Project Page</a>
-        </div>
-        <div><span class="tag">Time Series Forecasting</span> <span class="tag">Benchmarking</span> <span class="tag">LLM Reasoning</span></div>
-    </div>
+      <div class="pub-category">
+        <h3>Agentic Video Generation and Storytelling</h3>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2604.24842">Co-Director: Agentic Generative Video Storytelling</a></div>
-        <div class="authors">Yale Song, <strong>Yiwen Song</strong>, Nick Losier, Nathan Hodson, Ye Jin, Rhyard Zhu, Yan Xu, Daniel Vlasic, Carina Claassen, Jasmine Leon, Khanh G. LeViet, Zack Chomyn, Joe Timmons, Brett Slatkin, Scott Penberthy, Tomas Pfister</div>
-        <div class="venue">COLM (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2604.24842">Paper</a>
-            <a href="https://co-director-agent.github.io/">Project Page</a>
-            <a href="https://github.com/GoogleCloudPlatform/genmedia-izumi-agent/tree/main/demos/backend/ads_codirector">Code</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2604.24842">Co-Director: Agentic Generative Video Storytelling</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2604.24842">[Paper]</a> <a href="https://co-director-agent.github.io/">[Project]</a> <a href="https://github.com/GoogleCloudPlatform/genmedia-izumi-agent/tree/main/demos/backend/ads_codirector">[Code]</a> <a href="https://research.google/blog/coherent-long-form-video-generation/">[Blog]</a></div>
+          <div class="pub-authors">Yale Song, <strong>Yiwen Song</strong>, Nick Losier, Nathan Hodson, Ye Jin, Rhyard Zhu, Yan Xu, Daniel Vlasic, Carina Claassen, Jasmine Leon, Khanh G. LeViet, Zack Chomyn, Joe Timmons, Brett Slatkin, Scott Penberthy, Tomas Pfister</div>
+          <div class="pub-venue">COLM 2026</div>
         </div>
-        <div><span class="tag">Video Generation</span> <span class="tag">Agentic Storytelling</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2604.13452">CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding</a></div>
-        <div class="authors">Ishani Mondal, <strong>Yiwen Song</strong>, Mihir Parmar, Palash Goyal, Jordan Boyd-Graber, Tomas Pfister, Yale Song</div>
-        <div class="venue">arXiv (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2604.13452">Paper</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2604.13452">CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2604.13452">[Paper]</a></div>
+<div class="pub-authors">Ishani Mondal, <strong>Yiwen Song</strong>, Mihir Parmar, Palash Goyal, Jordan Boyd-Graber, Tomas Pfister, Yale Song</div>
+          <div class="pub-venue">EMNLP 2026 Findings</div>
         </div>
-        <div><span class="tag">Multimodal Generation</span> <span class="tag">Continuity-Aware Narratives</span></div>
-    </div>
-    
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2604.05018">PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</a></div>
-        <div class="authors"><strong>Yiwen Song</strong>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
-        <div class="venue">COLM (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2604.05018">Paper</a>
-            <a href="https://yiwen-song.github.io/paper_orchestra/">Project Page</a>
-            <a href="https://github.com/google-research/paper-orchestra">Code</a>
-        </div>
-        <div><span class="tag">AI Paper Writing</span> <span class="tag">Multi-agent System</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2603.12310">VQQA: An Agentic Approach for Video Evaluation and Quality Improvement</a></div>
-        <div class="authors"><strong>Yiwen Song</strong>, Tomas Pfister, Yale Song</div>
-        <div class="venue">arXiv (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2603.12310">Paper</a>
-            <a href="https://yiwen-song.github.io/vqqa/">Project Page</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2603.12310">VQQA: An Agentic Approach for Video Evaluation and Quality Improvement</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2603.12310">[Paper]</a> <a href="https://yiwen-song.github.io/vqqa/">[Project]</a></div>
+          <div class="pub-authors"><strong>Yiwen Song</strong>, Tomas Pfister, Yale Song</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2026</span></div>
         </div>
-        <div><span class="tag">Video Evaluation</span> <span class="tag">Quality Improvement</span> <span class="tag">Prompt Optimization</span></div>
-    </div>
+      </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2510.04673">Watch and Learn: Learning to Use Computers from Online Videos</a></div>
-        <div class="authors">Chan Hee Song, <strong>Yiwen Song</strong>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
-        <div class="venue">CVPR (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2510.04673">Paper</a>
-            <a href="https://chanh.ee/wandl/">Project Page</a>
-            <a href="https://venturebeat.com/ai/googles-watch-and-learn-framework-cracks-the-data-bottleneck-for-training">Media Coverage</a>
-        </div>
-        <div><span class="tag">Computer Use Agents</span> <span class="tag">Inverse Dynamics Model</span></div>
-    </div>
+      <div class="pub-category">
+        <h3>AI Agents for Scientific Research</h3>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2511.05460">Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models</a></div>
-        <div class="authors">Sarkar Snigdha Sarathi Das, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Long T Le, Lesly Miculicich, Jinsung Yoon, Rui Zhang, Hamid Palangi, Tomas Pfister</div>
-        <div class="venue">TMLR (2026)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2511.05460">Paper</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2604.05018">PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2604.05018">[Paper]</a> <a href="https://yiwen-song.github.io/paper_orchestra/">[Project]</a> <a href="https://github.com/google-research/paper-orchestra">[Code]</a></div>
+          <div class="pub-authors"><strong>Yiwen Song</strong>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
+          <div class="pub-venue">COLM 2026</div>
         </div>
-        <div><span class="tag">Time Series Forecasting</span> <span class="tag">Foundation Models</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities</a></div>
-        <div class="authors">Gemini Team (G Comanici, E Bieber... <strong>Yiwen Song</strong>, et al.)</div>
-        <div class="venue">arXiv (2025)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2507.06261">Paper</a>
-            <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/">Blog</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2601.22638">ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2601.22638">[Paper]</a></div>
+<div class="pub-authors">Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Hamid Palangi, Tomas Pfister, Jinsung Yoon</div>
+          <div class="pub-venue">NeurIPS 2026</div>
         </div>
-        <div><span class="tag">Frontier Models</span> <span class="tag">Multimodality</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">Plan-tuning: Post-training language models to learn step-by-step planning for complex problem solving</a></div>
-        <div class="authors">Mihir Parmar, Palash Goyal, Xin Liu, <strong>Yiwen Song</strong>, Mingyang Ling, Chitta Baral, Hamid Palangi, Tomas Pfister</div>
-        <div class="venue">EMNLP Main (2025)</div>
-        <div class="project-links">
-            <a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">Paper</a>
-            <a href="https://github.com/Mihir3009/plan-tuning">Code</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2510.01285">LLM-Based Multi-Agent Blackboard System for Information Discovery in Data Science</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2510.01285">[Paper]</a></div>
+<div class="pub-authors">Alireza Salemi, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Jinsung Yoon, Hamed Zamani, Tomas Pfister, Hamid Palangi</div>
+          <div class="pub-venue">NeurIPS 2026</div>
         </div>
-        <div><span class="tag">LLM Planning</span> <span class="tag">Post-training</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2509.22876">HEART: Emotionally-driven test-time scaling of Language Models</a></div>
-        <div class="authors">Gabriela Pinto, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Souradip Chakraborty, Zifeng Wang, Jingsun Yoon, Hamid Palangi, Tomas Pfister</div>
-        <div class="venue">arXiv (2025)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2509.22876">Paper</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2605.26340">ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2605.26340">[Paper]</a> <a href="https://scientist-one.github.io/">[Project]</a></div>
+          <div class="pub-authors">Rui Meng, Bhavana Dalvi Mishra, Jiefeng Chen, Chun-Liang Li, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Yale Song, Rajarishi Sinha, Parthasarathy Ranganathan, Burak Gokturk, Jinsung Yoon, Tomas Pfister</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2026</span></div>
         </div>
-        <div><span class="tag">LLM Reasoning</span> <span class="tag">Test-Time Scaling</span></div>
-    </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2510.01285">Llm-based multi-agent blackboard system for information discovery in data science</a></div>
-        <div class="authors">Alireza Salemi, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Jinsung Yoon, Hamed Zamani, Tomas Pfister, Hamid Palangi</div>
-        <div class="venue">arXiv (2025)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2510.01285">Paper</a>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2608.30241">PaperBanana-Interact: Scientific Diagram Refinement with Multi-Turn Human Feedback</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2608.30241">[Paper]</a> <a href="https://shirley-wu.github.io/PaperBanana-Interact/">[Project]</a></div>
+          <div class="pub-authors">Xueqing Wu, Ashwin Balasubramanian, Bingxuan Li, Dawei Zhu, Kai-Wei Chang, Yale Song, <strong>Yiwen Song</strong>, Rui Meng, Tomas Pfister, Nanyun Peng</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2026</span></div>
         </div>
-        <div><span class="tag">Multi-Agent Systems</span> <span class="tag">Data Discovery</span></div>
-    </div>
+      </div>
 
-    <div class="project">
-        <div class="project-title"><a href="https://arxiv.org/abs/2407.21783">The Llama 3 Herd of Models</a></div>
-        <div class="authors">Llama Team (A Dubey, A Jauhri... <strong>Yiwen Song</strong>, et al.)</div>
-        <div class="venue">arXiv (2024)</div>
-        <div class="project-links">
-            <a href="https://arxiv.org/abs/2407.21783">Paper</a>
-            <a href="https://www.llama.com/models/llama-3/">Webpage</a>
-        </div>
-        <div><span class="tag">Foundation Models</span></div>
-    </div>
+      <div class="pub-category">
+        <h3>LLM Agents: Planning, Memory, and Test-Time Scaling</h3>
 
-    <div class="footer">
-        <div class="map-container">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VzaztpRYfrHYrUk7uEfOn2lavgJrcCIEoygLILGSMDI&cl=ffffff&w=a"></script>
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2510.04673">Watch and Learn: Learning to Use Computers from Online Videos</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2510.04673">[Paper]</a> <a href="https://chanh.ee/wandl/">[Project]</a> <a href="https://venturebeat.com/ai/googles-watch-and-learn-framework-cracks-the-data-bottleneck-for-training">[Media]</a></div>
+          <div class="pub-authors">Chan Hee Song, <strong>Yiwen Song</strong>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
+          <div class="pub-venue">CVPR 2026</div>
         </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">Plan-Tuning: Post-Training Language Models to Learn Step-by-Step Planning for Complex Problem Solving</a></div>
+          <div class="pub-code"><a href="https://aclanthology.org/2025.emnlp-main.1087.pdf">[Paper]</a> <a href="https://github.com/Mihir3009/plan-tuning">[Code]</a></div>
+          <div class="pub-authors">Mihir Parmar, Palash Goyal, Xin Liu, <strong>Yiwen Song</strong>, Mingyang Ling, Chitta Baral, Hamid Palangi, Tomas Pfister</div>
+          <div class="pub-venue">EMNLP 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2503.08026">In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized Dialogue Agents</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2503.08026">[Paper]</a></div>
+<div class="pub-authors">Zhen Tan, Jun Yan, I-Hung Hsu, Rujun Han, Zifeng Wang, Long T. Le, <strong>Yiwen Song</strong>, Yanfei Chen, Hamid Palangi, George Lee, Anand Iyer, Tianlong Chen, Huan Liu, Chen-Yu Lee, Tomas Pfister</div>
+          <div class="pub-venue">ACL 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2504.01931">On the Role of Feedback in Test-Time Scaling of Agentic AI Workflows</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2504.01931">[Paper]</a></div>
+<div class="pub-authors">Souradip Chakraborty, Mohammadreza Pourreza, Ruoxi Sun, <strong>Yiwen Song</strong>, Nino Scherrer, Furong Huang, Amrit Singh Bedi, Ahmad Beirami, Jindong Gu, Hamid Palangi, Tomas Pfister</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2025</span></div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2509.22876">HEART: Emotionally-Driven Test-Time Scaling of Language Models</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2509.22876">[Paper]</a></div>
+<div class="pub-authors">Gabriela Pinto, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Souradip Chakraborty, Zifeng Wang, Jinsung Yoon, Tomas Pfister, Hamid Palangi</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2025</span></div>
+        </div>
+      </div>
+
+      <div class="pub-category">
+        <h3>Calibration, Evaluation, and Trust</h3>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2606.07822">The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2606.07822">[Paper]</a></div>
+<div class="pub-authors">Nishant Subramani, Palash Goyal, <strong>Yiwen Song</strong>, Mani Malek, Yuan Xue, Tomas Pfister, Hamid Palangi</div>
+          <div class="pub-venue">ICML 2026</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2510.00263">Judging with Confidence: Calibrating Autoraters to Preference Distributions</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2510.00263">[Paper]</a></div>
+<div class="pub-authors">Zhuohang Li, Xiaowei Li, Chengyu Huang, Guowang Li, Katayoon Goshvadi, Bo Dai, Dale Schuurmans, Paul Zhou, Hamid Palangi, <strong>Yiwen Song</strong>, Palash Goyal, Murat Kantarcioglu, Bradley A. Malin, Yuan Xue</div>
+          <div class="pub-venue">EMNLP 2026 Findings</div>
+        </div>
+      </div>
+
+      <div class="pub-category">
+        <h3>Time Series Foundation Models</h3>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2604.05364">TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2604.05364">[Paper]</a> <a href="https://tfrbench.github.io/">[Project]</a></div>
+          <div class="pub-authors">Md Atik Ahamed, Mihir Parmar, Palash Goyal, <strong>Yiwen Song</strong>, Long T. Le, Qiang Cheng, Chun-Liang Li, Hamid Palangi, Jinsung Yoon, Tomas Pfister</div>
+          <div class="pub-venue">ICML 2026</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2511.05460">Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2511.05460">[Paper]</a></div>
+<div class="pub-authors">Sarkar Snigdha Sarathi Das, Palash Goyal, Mihir Parmar, <strong>Yiwen Song</strong>, Long T. Le, Lesly Miculicich, Jinsung Yoon, Rui Zhang, Hamid Palangi, Tomas Pfister</div>
+          <div class="pub-venue">TMLR 2026</div>
+        </div>
+      </div>
+
+      <div class="pub-category">
+        <h3>Computer Vision (Meta)</h3>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2309.15807">Emu: Enhancing Image Generation Models Using Photogenic Needles in a Haystack</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2309.15807">[Paper]</a></div>
+<div class="pub-authors">Xiaoliang Dai, Ji Hou, Chih-Yao Ma, Sam Tsai, Jialiang Wang, Rui Wang, Peizhao Zhang, Simon Vandenhende, Xiaofang Wang, Abhimanyu Dubey, Matthew Yu, Abhishek Kadian, Filip Radenovic, Dhruv Mahajan, Kunpeng Li, Yue Zhao, Vladan Petrovic, Mitesh Kumar Singh, Simran Motwani, Yi Wen, <strong>Yiwen Song</strong>, Roshan Sumbaly, Vignesh Ramanathan, Zijian He, Peter Vajda, Devi Parikh</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2023</span></div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2301.01795">PACO: Parts and Attributes of Common Objects</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2301.01795">[Paper]</a> <a href="https://github.com/facebookresearch/paco">[Code]</a></div>
+          <div class="pub-authors">Vignesh Ramanathan, Anmol Kalia, Vladan Petrovic, Yi Wen, Baixue Zheng, Baishan Guo, Rui Wang, Aaron Marquez, Rama Kovvuri, Abhishek Kadian, Amir Mousavi, <strong>Yiwen Song</strong>, Abhimanyu Dubey, Dhruv Mahajan</div>
+          <div class="pub-venue">CVPR 2023</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Reports -->
+    <section class="section" id="tech-reports">
+      <h2>Technical Reports</h2>
+
+      <div class="pub-item">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities</a></div>
+        <div class="pub-code"><a href="https://arxiv.org/abs/2507.06261">[Paper]</a> <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/">[Blog]</a></div>
+        <div class="pub-authors">Gemini Team, Google</div>
+        <div class="pub-venue"><span class="pub-preprint">Technical Report, 2025</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2504.01081">ShieldGemma 2: Robust and Tractable Image Content Moderation</a></div>
+        <div class="pub-code"><a href="https://arxiv.org/abs/2504.01081">[Paper]</a> <a href="https://ai.google.dev/gemma/docs/shieldgemma">[Model]</a></div>
+        <div class="pub-authors">Wenjun Zeng, Dana Kurniawan, Ryan Mullins, Yuchi Liu, Tamoghna Saha, Dirichi Ike-Njoku, Jindong Gu, <strong>Yiwen Song</strong>, Cai Xu, Jingjing Zhou, Aparna Joshi, Shravan Dheep, Mani Malek, Hamid Palangi, Joon Baek, Rick Pereira, Karthik Narasimhan</div>
+        <div class="pub-venue"><span class="pub-preprint">Technical Report, 2025</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2407.21783">The Llama 3 Herd of Models</a></div>
+        <div class="pub-code"><a href="https://arxiv.org/abs/2407.21783">[Paper]</a> <a href="https://www.llama.com/models/llama-3/">[Webpage]</a></div>
+        <div class="pub-authors">Llama Team, AI @ Meta <span class="pub-role">Core Contributor</span></div>
+        <div class="pub-venue"><span class="pub-preprint">Technical Report, 2024</span></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="map-container">
+        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VzaztpRYfrHYrUk7uEfOn2lavgJrcCIEoygLILGSMDI&cl=ffffff&w=a"></script>
+      </div>
+      &copy; 2026 Yiwen Song
     </div>
+  </footer>
 
 </body>
 </html>
