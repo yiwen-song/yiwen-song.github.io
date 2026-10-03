@@ -12,6 +12,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yiwen Song | Research Scientist</title>
+  <!-- Kai-style (楷体) webfont fallback for the Chinese name; browsers only fetch the glyph subset they need -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-bold.css">
   <style>
     /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +23,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #222;
-      background: #fff;
+      background: #FFF8E8; /* warm light yellow */
       line-height: 1.7;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
@@ -55,6 +57,16 @@
       font-weight: 700;
       margin-bottom: 4px;
       letter-spacing: -0.5px;
+    }
+
+    .site-header h1 .cn-name {
+      font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", "BiauKai", "AR PL UKai CN", "LXGW WenKai", serif;
+      font-weight: 700;
+    }
+
+    .site-header h1 .paren {
+      font-weight: 300;
+      color: #777;
     }
 
     .site-header .tagline {
@@ -115,14 +127,20 @@
 
     /* Bio */
     .bio {
-      margin: 20px 0 10px;
+      margin: 28px 0 10px;
+      padding: 20px 24px 8px;
       text-align: left;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid #efe3c6;
+      border-left: 4px solid #f3c963;
+      border-radius: 8px;
     }
 
     .bio p {
       margin-bottom: 14px;
       color: #333;
     }
+
 
     /* Section styles */
     .section {
@@ -142,10 +160,10 @@
     .news-container {
       max-height: 300px;
       overflow-y: auto;
-      border: 1px solid #eee;
+      border: 1px solid #efe3c6;
       border-radius: 6px;
       padding: 16px 20px;
-      background: #fafafa;
+      background: rgba(255, 255, 255, 0.55);
     }
 
     .news-container::-webkit-scrollbar { width: 6px; }
@@ -279,7 +297,7 @@
     <!-- Header -->
     <header class="site-header">
       <img class="avatar" src="profile_picture.png" width="150" height="150" alt="Yiwen Song">
-      <h1>Yiwen Song (宋怡文)</h1>
+      <h1>Yiwen Song <span class="paren">(</span><span class="cn-name">宋怡文</span><span class="paren">)</span></h1>
       <p class="tagline">Research Scientist @ <a href="https://research.google/teams/cloud-ai-research/">Google Cloud AI Research</a></p>
 
       <div class="social-links">
@@ -588,7 +606,6 @@
       <div class="map-container">
         <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VzaztpRYfrHYrUk7uEfOn2lavgJrcCIEoygLILGSMDI&cl=ffffff&w=a"></script>
       </div>
-      &copy; 2026 Yiwen Song
     </div>
   </footer>
 
