@@ -156,13 +156,13 @@
       letter-spacing: -0.3px;
     }
 
-    /* News */
+    /* News (timeline) */
     .news-container {
-      max-height: 300px;
+      max-height: 340px;
       overflow-y: auto;
       border: 1px solid #efe3c6;
       border-radius: 6px;
-      padding: 16px 20px;
+      padding: 6px 16px 10px;
       background: rgba(255, 255, 255, 0.55);
     }
 
@@ -171,23 +171,121 @@
     .news-container::-webkit-scrollbar-thumb { background: #d1d5da; border-radius: 4px; }
     .news-container::-webkit-scrollbar-thumb:hover { background: #959da5; }
 
-    .news-item {
-      display: flex;
-      gap: 14px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-      color: #333;
+    /* kind colours */
+    [data-kind="paper"]  { --c: #e0a21b; }
+    [data-kind="accept"] { --c: #c0392b; }
+    [data-kind="talk"]   { --c: #0066cc; }
+    [data-kind="blog"]   { --c: #7a4fb0; }
+
+    .news-item,
+    .news-year {
+      display: grid;
+      grid-template-columns: 80px 22px 1fr;
+      column-gap: 12px;
+      align-items: start;
     }
 
-    .news-item:last-child { margin-bottom: 0; }
+    .news-item {
+      padding: 6px 8px 6px 0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #333;
+      transition: background 0.15s ease;
+    }
+
+    .news-item:hover { background: rgba(255, 255, 255, 0.9); }
 
     .news-date {
-      flex-shrink: 0;
-      width: 72px;
       color: #888;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-variant-numeric: tabular-nums;
+      text-align: right;
       padding-top: 2px;
+      white-space: nowrap;
+    }
+
+    .news-mark {
+      position: relative;
+      align-self: stretch;
+      min-height: 24px;
+    }
+
+    /* the rail */
+    .news-mark::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      bottom: -6px;
+      width: 2px;
+      margin-left: -1px;
+      background: #ead9b3;
+    }
+
+    .news-timeline > :first-child .news-mark::before { top: 50%; }
+    .news-timeline > :last-child  .news-mark::before { bottom: auto; height: 20px; }
+
+    /* the dot */
+    .news-dot {
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      margin-left: -6px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2.5px solid var(--c, #bbb);
+      box-shadow: 0 0 0 3px #FFF8E8;
+      z-index: 1;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .news-item:hover .news-dot {
+      transform: scale(1.25);
+      background: var(--c, #bbb);
+    }
+
+    /* pulse on the newest item */
+    .news-item.is-latest .news-dot::after {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 2px solid var(--c, #bbb);
+      animation: news-pulse 1.8s ease-out infinite;
+    }
+
+    @keyframes news-pulse {
+      0%   { transform: scale(0.7); opacity: 0.9; }
+      100% { transform: scale(2.1); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .news-item.is-latest .news-dot::after { animation: none; }
+    }
+
+    /* year pills sitting on the rail */
+    .news-year { padding: 8px 0; }
+
+    .news-year .news-mark { grid-column: 2; min-height: 22px; }
+
+    .news-year .news-mark span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      white-space: nowrap;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #8a6d1f;
+      background: #f6e7bf;
+      border: 1px solid #ead9b3;
+      border-radius: 999px;
+      padding: 1px 9px;
+      line-height: 1.5;
     }
 
     /* Publications */
@@ -225,6 +323,12 @@
       font-size: 0.88rem;
       color: #666;
       margin-top: 2px;
+    }
+
+    .corr {
+      font-size: 0.7em;
+      color: #c0392b;
+      margin-left: 1px;
     }
 
     .pub-item .pub-venue {
@@ -286,8 +390,13 @@
       .avatar { width: 120px; height: 120px; }
       .site-header h1 { font-size: 1.6rem; }
       .section h2 { font-size: 1.2rem; }
-      .news-item { flex-direction: column; gap: 2px; }
-      .news-date { width: auto; }
+      .news-item, .news-year { grid-template-columns: 22px 1fr; column-gap: 10px; }
+      .news-item { padding-right: 4px; }
+      .news-mark { grid-column: 1; grid-row: 1 / span 2; }
+      .news-date { grid-column: 2; grid-row: 1; text-align: left; font-size: 0.78rem; padding-top: 0; }
+      .news-text { grid-column: 2; grid-row: 2; }
+      .news-year .news-mark { grid-column: 1; grid-row: auto; }
+      .news-year .news-mark span { left: 0; transform: translateY(-50%); }
     }
   </style>
 </head>
@@ -344,69 +453,94 @@
     <section class="section" id="news">
       <h2>News</h2>
       <div class="news-container">
-        <div class="news-item">
-          <div class="news-date">2026-10</div>
-          <div>Attending <strong>COLM 2026</strong> in San Francisco (Oct 6&ndash;9). Join our demo &amp; Q&amp;A on <em>Co-Director: Agentic Generative Video Storytelling</em> at the <a href="https://research.google/conferences-and-events/google-at-colm-2026/">Google booth</a> (#107) on Tuesday, Oct 6, 1:00&ndash;1:30 PM PT.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-09</div>
-          <div>Two papers accepted to <strong>NeurIPS 2026</strong>: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review" and "LLM-Based Multi-Agent Blackboard System for Information Discovery in Data Science".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-09</div>
-          <div>Two papers accepted to <strong>EMNLP 2026</strong> (Findings): "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Judging with Confidence: Calibrating Autoraters to Preference Distributions".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-09</div>
-          <div>Google Research blog post on Co-Director: <a href="https://research.google/blog/coherent-long-form-video-generation/">Automating coherent long-form video generation</a>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-07</div>
-          <div>Gave a demo for Co-Director at the <a href="https://research.google/conferences-and-events/google-at-icml-2026/">Google booth &amp; kiosk at ICML 2026</a>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-07</div>
-          <div>Two papers accepted to <strong>COLM 2026</strong>: "Co-Director: Agentic Generative Video Storytelling" and "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-05</div>
-          <div>Two papers accepted to <strong>ICML 2026</strong>: "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems" and "The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-04</div>
-          <div>Gave a talk about PaperOrchestra at the <a href="https://hub.baai.ac.cn/paper/ac0bb9ed-9fad-412c-ba1c-fedbb3129dbe">BAAI online seminar</a>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-04</div>
-          <div>Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-04</div>
-          <div>Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-03</div>
-          <div>Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-03</div>
-          <div>Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-02</div>
-          <div>Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2026-01</div>
-          <div>Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review".</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2025-07</div>
-          <div>Released the technical report for <strong>Gemini 2.5</strong>.</div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2025-04</div>
-          <div>Released the technical report for <strong>ShieldGemma 2</strong>.</div>
+        <div class="news-timeline">
+          <div class="news-year"><div class="news-mark"><span>2026</span></div></div>
+          <div class="news-item is-latest" data-kind="paper">
+            <div class="news-date">Oct 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released a new preprint: "<a href="https://arxiv.org/abs/2610.09326">VIS-Ground: Video Interactive Storytelling with Contextual Grounding</a>".</div>
+          </div>
+          <div class="news-item" data-kind="talk">
+            <div class="news-date">Oct 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Attending <strong>COLM 2026</strong> in San Francisco (Oct 6&ndash;9). Join our demo &amp; Q&amp;A on <em>Co-Director: Agentic Generative Video Storytelling</em> at the <a href="https://research.google/conferences-and-events/google-at-colm-2026/">Google booth</a> (#107) on Tuesday, Oct 6, 1:00&ndash;1:30 PM PT.</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">Sep 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Two papers accepted to <strong>NeurIPS 2026</strong>: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review" and "LLM-Based Multi-Agent Blackboard System for Information Discovery in Data Science".</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">Sep 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Two papers accepted to <strong>EMNLP 2026</strong> (Findings): "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Judging with Confidence: Calibrating Autoraters to Preference Distributions".</div>
+          </div>
+          <div class="news-item" data-kind="blog">
+            <div class="news-date">Sep 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Google Research blog post on Co-Director: <a href="https://research.google/blog/coherent-long-form-video-generation/">Automating coherent long-form video generation</a>.</div>
+          </div>
+          <div class="news-item" data-kind="talk">
+            <div class="news-date">Jul 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Gave a demo for Co-Director at the <a href="https://research.google/conferences-and-events/google-at-icml-2026/">Google booth &amp; kiosk at ICML 2026</a>.</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">Jul 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Two papers accepted to <strong>COLM 2026</strong>: "Co-Director: Agentic Generative Video Storytelling" and "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">May 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Two papers accepted to <strong>ICML 2026</strong>: "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems" and "The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust".</div>
+          </div>
+          <div class="news-item" data-kind="talk">
+            <div class="news-date">Apr 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Gave a talk about PaperOrchestra at the <a href="https://hub.baai.ac.cn/paper/ac0bb9ed-9fad-412c-ba1c-fedbb3129dbe">BAAI online seminar</a>.</div>
+          </div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Apr 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released two new preprints: "CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding" and "Co-Director: Agentic Generative Video Storytelling".</div>
+          </div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Apr 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released a new preprint: "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing".</div>
+          </div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Mar 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released a new preprint: "VQQA: An Agentic Approach for Video Evaluation and Quality Improvement".</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">Mar 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Our paper "Watch and Learn: Learning to Use Computers from Online Videos" was accepted to <strong>CVPR 2026</strong>.</div>
+          </div>
+          <div class="news-item" data-kind="accept">
+            <div class="news-date">Feb 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Our paper "Synapse: Adaptive Arbitration of Complementary Expertise in Time Series Foundational Models" was accepted to <strong>TMLR</strong>.</div>
+          </div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Jan 2026</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released a new preprint: "ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review".</div>
+          </div>
+          <div class="news-year"><div class="news-mark"><span>2025</span></div></div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Jul 2025</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released the technical report for <strong>Gemini 2.5</strong>.</div>
+          </div>
+          <div class="news-item" data-kind="paper">
+            <div class="news-date">Apr 2025</div>
+            <div class="news-mark"><span class="news-dot"></span></div>
+            <div class="news-text">Released the technical report for <strong>ShieldGemma 2</strong>.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -414,7 +548,7 @@
     <!-- Publications -->
     <section class="section" id="publications">
       <h2>Publications</h2>
-      <p class="pub-all">See all publications on <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en">Google Scholar</a>.</p>
+      <p class="pub-all">See all publications on <a href="https://scholar.google.com/citations?user=LA3LgH4AAAAJ&hl=en">Google Scholar</a>. <sup class="corr">&dagger;</sup> denotes corresponding author.</p>
 
       <div class="pub-category">
         <h3>Agentic Video Generation and Storytelling</h3>
@@ -429,14 +563,21 @@
         <div class="pub-item">
           <div class="pub-title"><a href="https://arxiv.org/abs/2604.13452">CANVAS: Continuity-Aware Narratives via Visual Agentic Storyboarding</a></div>
           <div class="pub-code"><a href="https://arxiv.org/abs/2604.13452">[Paper]</a></div>
-<div class="pub-authors">Ishani Mondal, <strong>Yiwen Song</strong>, Mihir Parmar, Palash Goyal, Jordan Boyd-Graber, Tomas Pfister, Yale Song</div>
+<div class="pub-authors">Ishani Mondal, <strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Mihir Parmar, Palash Goyal, Jordan Boyd-Graber, Tomas Pfister, Yale Song</div>
           <div class="pub-venue">EMNLP 2026 Findings</div>
         </div>
 
         <div class="pub-item">
           <div class="pub-title"><a href="https://arxiv.org/abs/2603.12310">VQQA: An Agentic Approach for Video Evaluation and Quality Improvement</a></div>
           <div class="pub-code"><a href="https://arxiv.org/abs/2603.12310">[Paper]</a> <a href="https://yiwen-song.github.io/vqqa/">[Project]</a></div>
-          <div class="pub-authors"><strong>Yiwen Song</strong>, Tomas Pfister, Yale Song</div>
+          <div class="pub-authors"><strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Tomas Pfister, Yale Song</div>
+          <div class="pub-venue"><span class="pub-preprint">arXiv 2026</span></div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2610.09326">VIS-Ground: Video Interactive Storytelling with Contextual Grounding</a></div>
+          <div class="pub-code"><a href="https://arxiv.org/abs/2610.09326">[Paper]</a> <a href="https://vis-ground.github.io/">[Project]</a></div>
+          <div class="pub-authors">Bingxuan Li, <strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Xueqing Wu, Yanzhou Pan, Yang Li, Kuang Su, Jingyun Liu, Sebastian Ko, Huan Zhang, Tong Zhang, Nanyun Peng, Tomas Pfister, Yale Song</div>
           <div class="pub-venue"><span class="pub-preprint">arXiv 2026</span></div>
         </div>
       </div>
@@ -447,7 +588,7 @@
         <div class="pub-item">
           <div class="pub-title"><a href="https://arxiv.org/abs/2604.05018">PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</a></div>
           <div class="pub-code"><a href="https://arxiv.org/abs/2604.05018">[Paper]</a> <a href="https://yiwen-song.github.io/paper_orchestra/">[Project]</a> <a href="https://github.com/google-research/paper-orchestra">[Code]</a></div>
-          <div class="pub-authors"><strong>Yiwen Song</strong>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
+          <div class="pub-authors"><strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Yale Song, Tomas Pfister, Jinsung Yoon</div>
           <div class="pub-venue">COLM 2026</div>
         </div>
 
@@ -486,7 +627,7 @@
         <div class="pub-item">
           <div class="pub-title"><a href="https://arxiv.org/abs/2510.04673">Watch and Learn: Learning to Use Computers from Online Videos</a></div>
           <div class="pub-code"><a href="https://arxiv.org/abs/2510.04673">[Paper]</a> <a href="https://chanh.ee/wandl/">[Project]</a> <a href="https://venturebeat.com/ai/googles-watch-and-learn-framework-cracks-the-data-bottleneck-for-training">[Media]</a></div>
-          <div class="pub-authors">Chan Hee Song, <strong>Yiwen Song</strong>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
+          <div class="pub-authors">Chan Hee Song, <strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Palash Goyal, Yu Su, Oriana Riva, Hamid Palangi, Tomas Pfister</div>
           <div class="pub-venue">CVPR 2026</div>
         </div>
 
@@ -507,7 +648,7 @@
         <div class="pub-item">
           <div class="pub-title"><a href="https://arxiv.org/abs/2504.01931">On the Role of Feedback in Test-Time Scaling of Agentic AI Workflows</a></div>
           <div class="pub-code"><a href="https://arxiv.org/abs/2504.01931">[Paper]</a></div>
-<div class="pub-authors">Souradip Chakraborty, Mohammadreza Pourreza, Ruoxi Sun, <strong>Yiwen Song</strong>, Nino Scherrer, Furong Huang, Amrit Singh Bedi, Ahmad Beirami, Jindong Gu, Hamid Palangi, Tomas Pfister</div>
+<div class="pub-authors">Souradip Chakraborty, Mohammadreza Pourreza, Ruoxi Sun, <strong>Yiwen Song</strong><sup class="corr">&dagger;</sup>, Nino Scherrer, Furong Huang, Amrit Singh Bedi, Ahmad Beirami, Jindong Gu, Hamid Palangi, Tomas Pfister</div>
           <div class="pub-venue"><span class="pub-preprint">arXiv 2025</span></div>
         </div>
 
